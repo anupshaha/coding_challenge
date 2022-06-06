@@ -59,8 +59,7 @@ public class DataProcessor  extends Thread {
 
 
             int THREADSIZE = Math.min(listOfLists.size(), Integer.parseInt(Base.getProperty("THREADSIZE")));
-            int SUBLISTSIZE = Math.min(listOfLists.size(), listOfLists.size()==0?1:listOfLists.size() / THREADSIZE);
-
+            int SUBLISTSIZE = Math.min(listOfLists.size(), listOfLists.size()==0?1:listOfLists.size() % THREADSIZE ==0 ? (listOfLists.size() / THREADSIZE): ((listOfLists.size() / THREADSIZE)+1));
 
             log.info("Processing the Json Objects with THREAD Count of: "+ THREADSIZE);
 
