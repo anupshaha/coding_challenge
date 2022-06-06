@@ -76,7 +76,7 @@ public class FileParser{
         return jsonArray;
     }
 
-    public static long countLineFromFile(String fileName) {
+    public long countLineFromFile(String fileName) {
 
         Path path = Paths.get(fileName);
         long lines = 0;
@@ -89,6 +89,36 @@ public class FileParser{
         }
 
         return lines;
+    }
 
+    public static String getTheJsonFilePath() {
+
+        boolean isInputValid = false;
+        String userInput = "";
+        System.out.print("Do you want to specify the .json file? Select -> (Y/N) ");
+        Scanner scanner = new Scanner(System.in);
+        String userAnswer = scanner.nextLine();
+
+        while (isInputValid == false) {
+            switch (userAnswer.toLowerCase()) {
+                case "y": {
+                    System.out.print("Please provide the file path: ");
+                    userInput = scanner.nextLine();
+                    isInputValid = true;
+                    break;
+                }
+                case "n": {
+                    System.out.print("Default file path has been applied\n" );
+                    userInput = Base.getLogFilePath();
+                    isInputValid = true;
+                    break;
+                }
+                default:
+                    System.out.println("Inputted incorrect value.\nPlease try again:");
+                    userAnswer = scanner.nextLine();
+                    break;
+            }
+        }
+        return userInput;
     }
 }

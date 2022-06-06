@@ -70,7 +70,7 @@ public class DataProcessor  extends Thread {
 
                 new Thread(() -> {
                     log.debug("ThreadName: " + Thread.currentThread().getName()+ " is processing: " + newList);
-                    iterateOverJsonObjectList(newList);
+                    this.iterateOverJsonObjectList(newList);
                 }).start();
 
             }
@@ -97,15 +97,11 @@ public class DataProcessor  extends Thread {
                     //log.debug("id : "  + id+ " ,n:" + (++n));
                     Map<String, String> data = new HashMap<>();
 
-                    List<Object> list = objectsSubList
-                            .stream()
-                            .filter(x -> x.get("id").equals(id))
-                            .map(y -> y.get("timestamp"))
-                            .collect(Collectors.toList());
+                    duration = calculateDuration(objectsSubList, id);
 
-                    if (list.size() == 2) {
-                            duration = (long) list.get(1) - (long) list.get(0);
-                            duration = duration > 0 ? duration : -duration;
+                    if (duration != -1) {
+ /*                         duration = (long) list.get(1) - (long) list.get(0);
+                            duration = duration > 0 ? duration : -duration;*/
                             data.put("id", id);
                             data.put("type", (String) o.get("type"));
                             data.put("host", (String) o.get("host"));
@@ -121,6 +117,23 @@ public class DataProcessor  extends Thread {
         } catch (Exception e) {
             log.error(e.getMessage());
             //e.printStackTrace();
+        }
+    }
+
+    public long calculateDuration(List<JSONObject> objectsSubList, String id){
+        long duration;
+
+        List<Object> list = objectsSubList
+                .stream()
+                .filter(x -> x.get("id").equals(id))
+                .map(y -> y.get("timestamp"))
+                .collect(Collectors.toList());
+        if (list.size() == 2) {
+            duration = (long) list.get(1) - (long) list.get(0);
+            duration = duration > 0 ? duration : -duration;
+            return duration;
+        }else{
+            return -1;
         }
     }
 

@@ -1,3 +1,5 @@
 /.idea/
 /coding_challenge.iml
 /pom.xml
+/log4j/Application.log
+/target/
