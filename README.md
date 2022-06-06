@@ -1,4 +1,4 @@
-# coding_challenge
+# Coding Challenge
 Custom-build server logs
 
 ## Steps to Run:
