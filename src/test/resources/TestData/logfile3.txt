@@ -1198,4 +1198,3 @@
 {"id":"ccsmbstgr598","state":"FINISHED","timestamp":1491378544398}
 {"id":"ccsmbstgr599","state":"FINISHED","timestamp":1491378544399}
 {"id":"ccsmbstgr600","state":"FINISHED","timestamp":1491378544400}
-{"id":"ccsmbstgr601","state":"FINISHED","timestamp":1491378544400}

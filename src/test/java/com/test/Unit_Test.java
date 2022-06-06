@@ -12,8 +12,8 @@ import java.util.List;
 
 public class Unit_Test {
 
-    private FileParser parser;
-    private DataProcessor dataProcessor;
+    private final FileParser parser;
+    private final DataProcessor dataProcessor;
 
     public List<JSONObject> objects;
 

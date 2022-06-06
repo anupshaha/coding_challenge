@@ -120,6 +120,12 @@ public class DataProcessor  extends Thread {
         }
     }
 
+    /**
+     *
+     * @param objectsSubList
+     * @param id
+     * @return duration
+     */
     public long calculateDuration(List<JSONObject> objectsSubList, String id){
         long duration;
 

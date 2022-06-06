@@ -19,11 +19,14 @@ public class Base {
     public FileParser parser = null;
     public HSQLDBInsertData insert;
 
-    static {
-        org.apache.log4j.Logger log = getLogger(Base.class.getName());
+    public static Logger log = getLogger(Base.class.getName());
+
+
+/*    static {
+        Logger log = getLogger(Base.class.getName());
         String log4jConfPath = System.getProperty("user.dir")+"//PropertyFiles//log4j.properties";
         PropertyConfigurator.configure(log4jConfPath);
-    }
+    }*/
 
     public Base() {
         String log4jConfPath = System.getProperty("user.dir")+"//PropertyFiles//log4j.properties";

@@ -98,4 +98,3 @@
 {"id":"dcsmbstgr49","state":"FINISHED","timestamp":1491378543797}
 {"id":"dcsmbstgr50","state":"STARTED","timestamp":1491378543818}
 {"id":"dcsmbstgr50","state":"FINISHED","timestamp":1491378543796}
-{"id":"dcsmbstgr51","state":"STARTED","timestamp":1491378543818}
