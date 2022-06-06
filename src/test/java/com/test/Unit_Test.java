@@ -3,7 +3,6 @@ package com.test;
 
 import com.test.base.Base;
 import com.test.dataprocessing.DataProcessor;
-import com.test.dboperations.HSQLSelectData;
 import com.test.fileoperations.FileParser;
 import org.json.simple.JSONObject;
 import org.junit.jupiter.api.Assertions;
@@ -15,14 +14,12 @@ public class Unit_Test {
 
     private FileParser parser;
     private DataProcessor dataProcessor;
-    private HSQLSelectData selectData;
 
     public List<JSONObject> objects;
 
     public Unit_Test(){
         this.parser = new FileParser();
         this.dataProcessor = new DataProcessor();
-        this.selectData = new HSQLSelectData();
     }
 
     @Test
